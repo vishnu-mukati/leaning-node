@@ -1,0 +1,30 @@
+{
+  "name": "node-learn",
+  "version": "1.0.0",
+  "description": "this is for learn node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishnu-mukati/leaning-node.git"
+  },
+  "keywords": [
+    "node",
+    "is",
+    "leaning",
+    "by",
+    "you",
+    "tube"
+  ],
+  "author": "vishnu mukati",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vishnu-mukati/leaning-node/issues"
+  },
+  "homepage": "https://github.com/vishnu-mukati/leaning-node#readme",
+  "dependencies": {
+    "chalk": "^4.1.2"
+  }
+}
