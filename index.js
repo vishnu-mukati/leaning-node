@@ -1,14 +1,33 @@
 const fs = require('fs');
+const path = require('path');
 
-const input = process.argv;
+const dirPath = path.join(__dirname,"files");
 
-if(input[2]=='add'){
-    fs.writeFileSync(input[3],input[4]);
-}else if (input[2] == 'remove'){
-    fs.unlinkSync(input[3]);
-}else{
-    console.log('invalid input');
+// create multiples files in a folder
+for(let i=0;i<5;i++){
+    // fs.writeFileSync(dirPath+`/files${i}.txt`,'this is a demo file');
+    fs.writeFileSync(dirPath+ "/hello" +i+".txt" , "this is a demo file");
 }
+
+//Read and list multiple files
+
+fs.readdir(dirPath,((err,files)=>{
+    files.forEach((item)=>{
+        console.log('file name is',item);
+    })
+}))
+
+// const fs = require('fs');
+
+// const input = process.argv;
+
+// if(input[2]=='add'){
+//     fs.writeFileSync(input[3],input[4]);
+// }else if (input[2] == 'remove'){
+//     fs.unlinkSync(input[3]);
+// }else{
+//     console.log('invalid input');
+// }
 
 
 // const chalk = require('chalk');
