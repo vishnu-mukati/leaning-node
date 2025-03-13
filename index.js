@@ -1,21 +1,47 @@
 const fs = require('fs');
 const path = require('path');
 
-const dirPath = path.join(__dirname,"files");
+const dirPath = path.join(__dirname,'crud');
 
-// create multiples files in a folder
-for(let i=0;i<5;i++){
-    // fs.writeFileSync(dirPath+`/files${i}.txt`,'this is a demo file');
-    fs.writeFileSync(dirPath+ "/hello" +i+".txt" , "this is a demo file");
-}
+const filepath = `${dirPath}/file.txt`;
 
-//Read and list multiple files
+//Create file
+fs.writeFileSync(filepath,'this is the first created file');
 
-fs.readdir(dirPath,((err,files)=>{
-    files.forEach((item)=>{
-        console.log('file name is',item);
-    })
-}))
+//Read files data 
+// fs.readFile(filepath,'utf-8',(err,item)=>{
+//     console.log(item);
+// })
+
+//update file
+// fs.appendFile(filepath,'and the name is crud',(err)=>{
+//     if(!err)console.log('file updated');
+// })
+
+//rename file
+// fs.rename(filepath,`${dirPath}/testing.txt`,(err)=>{
+//     if(!err)console.log('rename successfull');
+// })
+
+//delete file
+
+fs.unlinkSync(`${dirPath}/testing.txt`);
+
+// const dirPath = path.join(__dirname,"files");
+
+// // create multiples files in a folder
+// for(let i=0;i<5;i++){
+//     // fs.writeFileSync(dirPath+`/files${i}.txt`,'this is a demo file');
+//     fs.writeFileSync(dirPath+ "/hello" +i+".txt" , "this is a demo file");
+// }
+
+// //Read and list multiple files
+
+// fs.readdir(dirPath,((err,files)=>{
+//     files.forEach((item)=>{
+//         console.log('file name is',item);
+//     })
+// }))
 
 // const fs = require('fs');
 
