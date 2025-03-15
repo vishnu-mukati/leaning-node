@@ -1,12 +1,29 @@
-const fs = require('fs');
-const path = require('path');
+const express = require('express');
+const app = express();
 
-const dirPath = path.join(__dirname,'crud');
+app.get('',(req,res)=>{
+    res.send('Hello,this is a home page');
+})
 
-const filepath = `${dirPath}/file.txt`;
+app.get('/about',(req,res)=>{
+    res.send('Hello,this is a about page');
+})
 
-//Create file
-fs.writeFileSync(filepath,'this is the first created file');
+app.get('/help',(req,res)=>{
+    res.send('welcome,this is a help page');
+})
+
+app.listen(2000);
+
+//  const fs = require('fs');
+// const path = require('path');
+
+// const dirPath = path.join(__dirname,'crud');
+
+// const filepath = `${dirPath}/file.txt`;
+
+// //Create file
+// fs.writeFileSync(filepath,'this is the first created file');
 
 //Read files data 
 // fs.readFile(filepath,'utf-8',(err,item)=>{
@@ -25,7 +42,7 @@ fs.writeFileSync(filepath,'this is the first created file');
 
 //delete file
 
-fs.unlinkSync(`${dirPath}/testing.txt`);
+// fs.unlinkSync(`${dirPath}/testing.txt`);
 
 // const dirPath = path.join(__dirname,"files");
 
