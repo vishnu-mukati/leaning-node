@@ -1,19 +1,37 @@
 const express = require('express');
+const path = require('path');
+
 const app = express();
+const publicPath = path.join(__dirname,'public');
+
+app.use(express.static(publicPath));
 
 app.get('',(req,res)=>{
-    res.send('Hello,this is a home page');
+    res.sendFile(`${publicPath}/home.html`)
+})
+app.get('about',(req,res)=>{
+    res.sendFile(`${publicPath}/about.html`)
+})
+app.get('*',(req,res)=>{
+    res.sendFile(`${publicPath}/nopage.html`)
 })
 
-app.get('/about',(req,res)=>{
-    res.send('Hello,this is a about page');
-})
 
-app.get('/help',(req,res)=>{
-    res.send('welcome,this is a help page');
-})
+app.listen(4000);
 
-app.listen(2000);
+// app.get('',(req,res)=>{
+//     res.send('Hello,this is a home page');
+// })
+
+// app.get('/about',(req,res)=>{
+//     res.send('Hello,this is a about page');
+// })
+
+// app.get('/help',(req,res)=>{
+//     res.send('welcome,this is a help page');
+// })
+
+// app.listen(2000);
 
 //  const fs = require('fs');
 // const path = require('path');
